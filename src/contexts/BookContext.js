@@ -7,6 +7,7 @@ const BookContextProvider = (props) => {
   const [books, setBooks] = useState([
     { title: 'name of my book 1', author: 'momenqudaih', id: 1 },
     { title: 'name of my book 2', author: 'Batrawi', id: 2 },
+    { title: 'name of my book 3', author: 'momenqudaih', id: 3 },
   ]);
 
   const addBook = (title, author) => {
