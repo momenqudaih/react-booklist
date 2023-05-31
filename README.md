@@ -1,3 +1,21 @@
+# Book Read List Web App
+
+This is a simple web app that allows users to keep track of books they have read. It uses React's Context and Reducers for state management, and local storage to persist the data.
+
+## Features
+
+- Add books to the list
+- Delete books from the list
+- Persist data using local storage
+
+## Technologies Used
+
+- React
+- React Context
+- React Reducers
+- Local Storage
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
