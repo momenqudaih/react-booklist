@@ -1,25 +1,20 @@
-import { createContext, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { createContext, useEffect, useReducer } from 'react';
+import { bookReducer } from '../reducers/bookReducer';
 
 export const BookContext = createContext();
 
 const BookContextProvider = (props) => {
-  const [books, setBooks] = useState([
-    { title: 'name of my book 1', author: 'momenqudaih', id: 1 },
-    { title: 'name of my book 2', author: 'Batrawi', id: 2 },
-    { title: 'name of my book 3', author: 'momenqudaih', id: 3 },
-  ]);
+  const [books, dispatch] = useReducer(bookReducer, [], () => {
+    const localData = localStorage.getItem('books');
+    return localData ? JSON.parse(localData) : [];
+  });
 
-  const addBook = (title, author) => {
-    setBooks([...books, { title, author, id: uuidv4() }]);
-  };
-
-  const removeBook = (id) => {
-    setBooks(books.filter((book) => book.id !== id));
-  };
+  useEffect(() => {
+    localStorage.setItem('books', JSON.stringify(books));
+  }, [books]);
 
   return (
-    <BookContext.Provider value={{ books, addBook, removeBook }}>
+    <BookContext.Provider value={{ books, dispatch }}>
       {props.children}
     </BookContext.Provider>
   );

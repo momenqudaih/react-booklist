@@ -20,6 +20,12 @@ body {
   color: #eee;
   padding-bottom: 2px;
 }
+
+@media (min-width: 900px) {
+  .App {
+    max-width: 55%;
+  }
+}
 .navbar {
   padding: 10px 20px;
   background: #6d3d6d;
@@ -47,6 +53,8 @@ nav ul li {
   cursor: pointer;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
+  overflow-wrap: break-word;
+  text-align: left;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -76,4 +84,53 @@ nav ul li {
 .empty {
   margin: 20px;
   text-align: center;
+}
+
+form {
+  margin: 20px;
+  text-align: center;
+}
+
+form input {
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  width: 200px;
+  margin-right: 10px;
+  outline: none;
+  background: #3c1f3c;
+  color: #eee;
+}
+
+form input[type='submit'] {
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+  border-radius: 4px;
+  background: #6d3d6d;
+  color: #eee;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  margin: 12px auto;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+form input[type='submit']:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  form input {
+    width: 94%;
+    margin-bottom: 10px;
+  }
+
+  form input[type='submit'] {
+    margin-right: 0;
+    width: 100%;
+  }
 }
